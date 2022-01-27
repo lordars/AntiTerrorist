@@ -349,3 +349,21 @@ footer {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+#enemigoMorto{
+  width: 30px;
+  height: 10px;
+  position: absolute;
+
+  background-image: url(public/img/animaLost/Zombie_Dead_Animated022.png);
+  animation-name: spin;
+  animation-duration: 900ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+ 
+}
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

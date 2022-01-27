@@ -91,6 +91,20 @@ function start() {
         
     }
 
+    function morto() {       
+           
+            topo = parseInt($("#enemigo1").css("top"))
+            positionX2 = parseInt($("#enemigo1").css("left"))
+            tiroX2 = positionX  ;
+            topoTiro2= topo ;
+            $("#fundogame").append("<div id='enemigoMorto'></div>");
+            $("#enemigoMorto").css("top", topoTiro2);
+            $("#enemigoMorto").css("left", tiroX2);
+
+            
+            
+        }
+
 
     function moveFundo() {
 
@@ -137,6 +151,7 @@ function start() {
         positionX = parseInt($("#enimigo2").css("left"));
         $("#enimigo2").css("left", positionX + velocidade2);
         $("#enimigo2").css("top", amigopositionY);
+
 
         if (vidas == 0) {
 
@@ -220,6 +235,7 @@ function start() {
    
     function colisao(){
         var colisao1= ($("#jogador").collision($("#enimigo1")))
+        var disparoEnemigo= ($("#disparo").collision($("#enimigo1")))
         var colisao2= ($("#jogador").collision($("#enimigo2")))
         var amigo= ($("#jogador").collision($("#amigo")))
       
@@ -236,6 +252,7 @@ function start() {
             vidas= vidas  -1
            
         }
+
         if(colisao2.length>0){
             enemigo1X = parseInt($("#enemigo2").css("left"))
             enemigo1Y = parseInt($("#enemigo2").css("top"))
@@ -249,6 +266,12 @@ function start() {
              
 
           }
+        }
+        if(disparoEnemigo.length>0){
+            positionY = parseInt(Math.random() * 334)
+            $("#enimigo1").css("left", 764);
+            $("#enimigo1").css("top", positionY);
+            morto();
         }
         if(amigo.length>0){
             enemigo1X = parseInt($("#amigo").css("left"))
