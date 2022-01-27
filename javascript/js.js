@@ -1,14 +1,20 @@
-
+const audio = new Audio();
+const disparoAudio = new Audio();
+const findeJogoAudio = new Audio();
+const deadEnemySound = new Audio();
+const colisionEnemigo = new Audio();
+const colicionAmigoSound = new Audio();
 
 function start() {
 
     $("#inicio").hide();
-
+   
     $("#fundogame").append("<div id='jogador' class='anima1' ></div> ");
     $("#fundogame").append("<div id='enimigo1' class='anima2' ></div> ");
     $("#fundogame").append("<div id='enimigo2' class='anima3'  ></div> ");
     $("#fundogame").append("<div id='amigo'  class='anima4'></div> ");
-
+    audio.src = "public/Rock You.mp3"
+    audio.play();
 
 
     var jogo = {}
@@ -21,6 +27,7 @@ function start() {
         down: 40,
         space: 32
     }
+   
     var velocidade = 5;
     var velocidade2 = 2;
     var positionY = parseInt(Math.random() * 550);
@@ -63,7 +70,8 @@ function start() {
     function disparo() {
         if(podeAtirar == true){
             podeAtirar=false
-           
+            disparoAudio.src = "public/DeathFlash.flac"
+            disparoAudio.play();
 
             topo = parseInt($("#jogador").css("top"))
             positionX = parseInt($("#jogador").css("left"))
@@ -100,7 +108,7 @@ function start() {
             $("#fundogame").append("<div id='enemigoMorto'></div>");
             $("#enemigoMorto").css("top", topoTiro2);
             $("#enemigoMorto").css("left", tiroX2);
-
+            
             
             
         }
@@ -113,6 +121,7 @@ function start() {
     }
 
     function movejogador() {
+     
         if (jogo.pressionou[tecla.up]) {
             var top0 = parseInt($("#jogador").css("top"));
             if (top0 > 20)
@@ -125,13 +134,17 @@ function start() {
         }
         if (jogo.pressionou[tecla.left]) {
             var left0 = parseInt($("#jogador").css("left"));
+            $("#jogador").css("transform",' scaleX(-1)')
             if (left0 > 10)
                 $("#jogador").css("left", left0 - 4)
+            
         }
         if (jogo.pressionou[tecla.right]) {
             var right0 = parseInt($("#jogador").css("left"));
+            $("#jogador").css("transform", ' scaleX(1)')
             if (right0 < 850)
                 $("#jogador").css("left", right0 + 4)
+
         }
         if(jogo.pressionou[tecla.space]){
             console.log(jogo.pressionou[tecla.space])
@@ -154,7 +167,8 @@ function start() {
 
 
         if (vidas == 0) {
-
+            findeJogoAudio.src = "public/round_end.wav"
+            findeJogoAudio.play();
             $("#fundogame").append("<div id='lost' class='animalost' > </div> ");
             $("#fundogame").append("<H1 id='die' >YOU Friend DIE, BRO!!</H1>");
             $("#jogador").remove();
@@ -242,15 +256,17 @@ function start() {
         if(colisao1.length>0){
             enemigo1X = parseInt($("#enemigo1").css("left"))
             enemigo1Y = parseInt($("#enemigo1").css("top"))
-            
+            colisionEnemigo.src = "public/lava.flac"
+            colisionEnemigo.play();
           
             positionY = parseInt(Math.random()*600);
             $("#enemigo1").css("left",694);
             $("#enemigo1").css("top",positionY);
             $("#jogador").css("left",30);
             $("#jogador").css("top", 50);
-            vidas= vidas  -1
+            vidas = vidas - 1
            
+
         }
 
         if(colisao2.length>0){
@@ -258,16 +274,21 @@ function start() {
             enemigo1Y = parseInt($("#enemigo2").css("top"))
             $("#jogador").css("left",30);
             $("#jogador").css("top", 50);
+            colisionEnemigo.src = "public/lava.flac"
+            colisionEnemigo.play();
             
           if(vidas > 6){
               positionY = parseInt(Math.random()*600);
               $("#enimigo2").css("left", 10);
-              $("#enimigo2").css("top",positionY );
+              $("#enimigo2").css("top", positionY);
+             
              
 
           }
         }
-        if(disparoEnemigo.length>0){
+        if (disparoEnemigo.length > 0) {
+            deadEnemySound.src = "public/death.wav"
+            deadEnemySound.play()
             positionY = parseInt(Math.random() * 334)
             $("#enimigo1").css("left", 764);
             $("#enimigo1").css("top", positionY);
@@ -276,7 +297,9 @@ function start() {
         if(amigo.length>0){
             enemigo1X = parseInt($("#amigo").css("left"))
             enemigo1Y = parseInt($("#amigo").css("top"))
-            
+            colicionAmigoSound.src ="public/colicionamigosound.wav"
+            colicionAmigoSound.play();
+
           
             positionY = parseInt(Math.random()*600);
             $("#jogador").css("left",30);
