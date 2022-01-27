@@ -1,0 +1,114 @@
+h1 {
+  font-size: 40px;
+  color: black;
+}
+
+body {
+  background-image: linear-gradient(
+    rgba(0, 0, 255, 0.5),
+    rgba(255, 255, 0, 0.5)
+  );
+}
+
+p {
+  color: black;
+}
+
+#container {
+  width: 950px;
+  height: auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#fundogame {
+  width: 950px;
+  height: 630px;
+  background-image: url(./public/img/JWDLx5AZBtI.jpg);
+  border-color: #fff;
+  border-style: solid;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  border-radius: 20px;
+}
+
+#jogador {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 8px;
+  top: 179px;
+  background-image: url(public/img/idle/survivor-idle_handgun_0.png);
+  max-width: 100px;
+  max-height: 150px;
+  background-size: contain;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: green;
+}
+
+#enimigo1 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 890px;
+    top: 179px;
+    background-image: url(public/img/idle/survivor-idle_handgun_0.png);
+    max-width: 100px;
+    max-height: 150px;
+    background-size: contain;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: red;
+    transform: scaleX(-1);
+}
+
+#enimigo2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 700px;
+    top: 500px;
+    background-image: url(public/img/idle/survivor-idle_handgun_0.png);
+    max-width: 100px;
+    max-height: 150px;
+    background-size: contain;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: red;
+    transform: scaleX(-1);
+}
+
+#amigo {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 800px;
+    top: 500px;
+    background-image: url(public/img/idle/Idle000.png);
+    max-width: 100px;
+    max-height: 150px;
+    background-size: contain;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: yellow;
+    transform: scaleX(-1);
+ 
+}
+
+#inicio {
+  width: 350px;
+  height: 200px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  text-align: center;
+  padding: 10px;
+}
+
+footer {
+  text-align: right;
+}
