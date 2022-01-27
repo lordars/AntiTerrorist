@@ -12,7 +12,6 @@ body {
 
 p {
   color: black;
-  
 }
 
 #container {
@@ -51,52 +50,51 @@ p {
 }
 
 #enimigo1 {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 890px;
-    top: 179px;
-    background-image: url(public/img/idle/survivor-idle_handgun_0.png);
-    max-width: 100px;
-    max-height: 150px;
-    background-size: contain;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: red;
-    transform: scaleX(-1);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 890px;
+  top: 179px;
+  background-image: url(public/img/idle/survivor-idle_handgun_7.png);
+  max-width: 100px;
+  max-height: 150px;
+  background-size: contain;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: red;
+  transform: scaleX(-1);
 }
 
 #enimigo2 {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 700px;
-    top: 500px;
-    background-image: url(public/img/idle/survivor-idle_handgun_0.png);
-    max-width: 100px;
-    max-height: 150px;
-    background-size: contain;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: red;
-    transform: scaleX(-1);
+  width: 1200px;
+  height: 50px;
+  position: absolute;
+  left: 700px;
+  top: 500px;
+  background-image: url(public/img/idle/survivor-idle_handgun_0.png);
+  max-width: 120px;
+  max-height: 145px;
+  background-size: contain;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: red;
+  
 }
 
 #amigo {
-    width: 100px;
-    height: 50px;
-    position: absolute;
-    left: 800px;
-    top: 500px;
-    background-image: url(public/img/idle/Idle000.png);
-    max-width: 100px;
-    max-height: 150px;
-    background-size: contain;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: yellow;
-    transform: scaleX(-1);
- 
+  width: 40px;
+  height: 50px;
+  position: absolute;
+  left: 850px;
+  top: 500px;
+  background-image: url(public/img/amigo/Zombie_Walk000.png);
+  max-width: 50px;
+  max-height: 80px;
+  background-size: contain;
+  border-radius: 50%;
+  border-style: dotted;
+  border-color: yellow;
+  
 }
 
 #inicio {
@@ -110,9 +108,162 @@ p {
   padding: 40px;
   padding-top: 0px;
   border-radius: 20px;
-  
 }
 
 footer {
   text-align: right;
+}
+
+.anima1 {
+  background-image: url(public/img/playerMove/survivor-meleeattack_handgun_0.png);
+  animation: play1 1s infinite;
+
+  /* -webkit-animation: play 0.5s steps(2) infinite;
+  -moz-animation: play 0.5s steps(2) infinite;
+  -ms-animation: play 0.5s steps(2) infinite;
+  -o-animation: play 0.5s steps(2) infinite; */
+}
+
+@keyframes play1 {
+  0%, 20% {
+  background-image: url(public/img/playerMove/survivor-meleeattack_handgun_1.png);
+  
+  }
+  25%, 30%
+  {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_2.png);
+  }
+  
+  35%, 40% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_3.png);
+  }
+  45%, 50% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_4.png);
+  }
+  55%, 60% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_5.png);
+  }
+  65%, 70% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_6.png);
+  }
+  
+  75%, 100% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_7.png);
+  }
+}
+
+.anima2 {
+  background-image: url(public/img/playerMove/survivor-meleeattack_handgun_0.png);
+  animation: play2 0.7s infinite;
+
+  /* -webkit-animation: play 0.5s steps(2) infinite;
+  -moz-animation: play 0.5s steps(2) infinite;
+  -ms-animation: play 0.5s steps(2) infinite;
+  -o-animation: play 0.5s steps(2) infinite; */
+}
+
+@keyframes play2 {
+  0%, 20% {
+  background-image: url(public/img/playerMove/survivor-meleeattack_handgun_7.png);
+  
+  }
+  25%, 30%
+  {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_8.png);
+  }
+  
+  35%, 40% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_9.png);
+  }
+  45%, 50% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_10.png);
+  }
+  55%, 60% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_11.png);
+  }
+  65%, 70% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_12.png);
+  }
+  
+  75%, 100% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_13.png);
+  }
+}
+
+.anima3{
+  background-image: url(public/img/playerMove/survivor-meleeattack_handgun_0.png);
+  animation: play3 0.6s infinite;
+
+  /* -webkit-animation: play 0.5s steps(2) infinite;
+  -moz-animation: play 0.5s steps(2) infinite;
+  -ms-animation: play 0.5s steps(2) infinite;
+  -o-animation: play 0.5s steps(2) infinite; */
+}
+
+@keyframes play3 {
+  0%, 20% {
+  background-image: url(public/img/playerMove/survivor-meleeattack_handgun_7.png);
+  
+  }
+  25%, 30%
+  {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_8.png);
+  }
+  
+  35%, 40% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_9.png);
+  }
+  45%, 50% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_10.png);
+  }
+  55%, 60% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_11.png);
+  }
+  65%, 70% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_12.png);
+  }
+  
+  75%, 100% {
+    background-image: url(public/img/playerMove/survivor-meleeattack_handgun_13.png);
+  }
+}
+
+
+
+.anima4{
+  background-image: url(public/img/amigo/Zombie_Walk000.png);
+  animation: play4 2s infinite;
+
+  /* -webkit-animation: play 0.5s steps(2) infinite;
+  -moz-animation: play 0.5s steps(2) infinite;
+  -ms-animation: play 0.5s steps(2) infinite;
+  -o-animation: play 0.5s steps(2) infinite; */
+}
+
+@keyframes play4 {
+  0%, 20% {
+  background-image: url(public/img/amigo/Zombie_Walk000.png);
+  
+  }
+  25%, 30%
+  {
+    background-image: url(public/img/amigo/Zombie_Walk001.png);
+  }
+  
+  35%, 40% {
+    background-image: url(public/img/amigo/Zombie_Walk002.png);
+  }
+  45%, 50% {
+    background-image: url(public/img/amigo/Zombie_Walk003.png);
+  }
+  55%, 60% {
+    background-image: url(public/img/amigo/Zombie_Walk004.png);
+  }
+  65%, 70% {
+    background-image: url(public/img/amigo/Zombie_Walk005.png);
+  }
+  
+  75%, 100% {
+    background-image: url(public/img/amigo/Zombie_Walk006.png);
+  }
 }
