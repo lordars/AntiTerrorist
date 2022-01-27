@@ -55,9 +55,10 @@ function start() {
         movejogador();
         moveInimigo();
         moveAmigo();
+        colisao();
        
     }
-
+    
    
     function disparo() {
         if(podeAtirar == true){
@@ -123,7 +124,6 @@ function start() {
             disparo();
         }
     }
-
     function moveInimigo() {
         positionX = parseInt($("#enimigo1").css("left"));
         $("#enimigo1").css("left", positionX - velocidade);
@@ -156,6 +156,16 @@ function start() {
 
         }
 
+        if (vidas > 2) {
+           
+                   
+            $("#jogador").css("border-style", "solid");
+            $("#amigo").css("border-style", "solid");
+
+           
+            
+
+        }
         if (vidas === 2) {
            
                    
@@ -208,11 +218,66 @@ function start() {
 
    
    
+    function colisao(){
+        var colisao1= ($("#jogador").collision($("#enimigo1")))
+        var colisao2= ($("#jogador").collision($("#enimigo2")))
+        var amigo= ($("#jogador").collision($("#amigo")))
+      
+        if(colisao1.length>0){
+            enemigo1X = parseInt($("#enemigo1").css("left"))
+            enemigo1Y = parseInt($("#enemigo1").css("top"))
+            
+          
+            positionY = parseInt(Math.random()*600);
+            $("#enemigo1").css("left",694);
+            $("#enemigo1").css("top",positionY);
+            $("#jogador").css("left",30);
+            $("#jogador").css("top", 50);
+            vidas= vidas  -1
+           
+        }
+        if(colisao2.length>0){
+            enemigo1X = parseInt($("#enemigo2").css("left"))
+            enemigo1Y = parseInt($("#enemigo2").css("top"))
+            $("#jogador").css("left",30);
+            $("#jogador").css("top", 50);
+            
+          if(vidas > 6){
+              positionY = parseInt(Math.random()*600);
+              $("#enimigo2").css("left", 10);
+              $("#enimigo2").css("top",positionY );
+             
 
+          }
+        }
+        if(amigo.length>0){
+            enemigo1X = parseInt($("#amigo").css("left"))
+            enemigo1Y = parseInt($("#amigo").css("top"))
+            
+          
+            positionY = parseInt(Math.random()*600);
+            $("#jogador").css("left",30);
+            $("#jogador").css("top", positionY);
+            
+            $("#enimigo2").css("left", 10);
+            $("#enimigo2").css("top",positionY );
+            vidas= vidas  + 1
+            if(vidas > 10){
+                velocidade = 10;
+               velocidade2 = 6;
+
+    $("#jogador").css("top", top0 - 8)
+    $("#jogador").css("top", down0 + 8)
+    $("#jogador").css("left", left0 - 8)
+    $("#jogador").css("left", right0 + 8)
+           }
+            console.log(vidas)
+        }
 }
 
 
 
+}
 
         
         
