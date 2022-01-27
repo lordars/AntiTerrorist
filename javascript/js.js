@@ -26,12 +26,14 @@ function start() {
     var positionY = parseInt(Math.random() * 550);
     var amigopositionY = parseInt(Math.random() * 550);
     var vidas = 3;
+    var podeAtirar=true;
     jogo.timer = setInterval(loop, 30);
     jogo.pressionou = [];
 
 
     $(document).keydown(function (e) {
         jogo.pressionou[e.which] = true;
+        
     })
     $(document).keyup(function (e) {
         jogo.pressionou[e.which] = false;
@@ -39,6 +41,7 @@ function start() {
 
 
 
+  
 
   
 
@@ -52,6 +55,39 @@ function start() {
         movejogador();
         moveInimigo();
         moveAmigo();
+       
+    }
+
+   
+    function disparo() {
+        if(podeAtirar == true){
+            podeAtirar=false
+           
+
+            topo = parseInt($("#jogador").css("top"))
+            positionX = parseInt($("#jogador").css("left"))
+            tiroX = positionX + 50;
+            topoTiro= topo +10;
+            $("#fundogame").append("<div id='disparo'></div>");
+            $("#disparo").css("top", topoTiro);
+            $("#disparo").css("left", tiroX);
+
+            var tempoDisparo = window.setInterval(executaDisparo, 30);
+            
+        }
+        function executaDisparo(){
+            positionX = parseInt($("#disparo").css("left"));
+            $("#disparo").css("left", positionX + 15)
+            if(positionX>900){
+                window.clearInterval(tempoDisparo)
+                tempoDisparo= null;
+                $("#disparo").remove();
+                podeAtirar=true
+    
+    
+            }
+        }
+        
     }
 
 
@@ -81,6 +117,10 @@ function start() {
             var right0 = parseInt($("#jogador").css("left"));
             if (right0 < 850)
                 $("#jogador").css("left", right0 + 4)
+        }
+        if(jogo.pressionou[tecla.space]){
+            console.log(jogo.pressionou[tecla.space])
+            disparo();
         }
     }
 
@@ -166,5 +206,14 @@ function start() {
     }
 
 
+   
+   
 
 }
+
+
+
+
+        
+        
+    
